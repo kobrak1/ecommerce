@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+}
+
+.policy {
+    border: 1px solid #dee0ea;
+    margin-top: 40px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.policy .policy-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+
+.policy .policy-list .policy-item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.policy .policy-list .policy-item .policy-texts {
+    display: flex;
+    flex-direction: column;
+}
+.policy .policy-list .policy-item i {
+    font-size: 50px;
+}
