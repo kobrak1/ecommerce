@@ -11,6 +11,11 @@ const Categories = () => {
             </div>
             <ul className="category-list">
               <CategoryItem />
+              <CategoryItem />
+              <CategoryItem />
+              <CategoryItem />
+              <CategoryItem />
+              <CategoryItem />
             </ul>
         </div>
     </section>
