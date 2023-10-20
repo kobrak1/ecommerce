@@ -1,10 +1,13 @@
+import './App.css'
+//components
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Policy from './components/Policy/Policy'
 import Sliders from './components/Sliders/Slider'
 import Categories from './components/Categories/Categories'
 import Products from './components/Products/Products'
-import './App.css'
+import Campaigns from './components/Campaigns/Campaigns'
+import Blogs from './components/Blogs/Blogs'
 
 const App = () => {
   return (
@@ -13,6 +16,8 @@ const App = () => {
       <Sliders />
       <Categories />
       <Products />
+      <Campaigns />
+      <Blogs />
       <Policy />
       <Footer />
     </div>
