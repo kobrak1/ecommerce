@@ -1,4 +1,3 @@
-
 import './Brands.css'
 
 const Brands = () => {
