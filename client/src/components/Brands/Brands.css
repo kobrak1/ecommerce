@@ -14,7 +14,3 @@
     opacity: 0.4;
     transition: 0.2s ease opacity;
   }
-  
-  .brand-list .brand-item:hover {
-    opacity: 1;
-  }
