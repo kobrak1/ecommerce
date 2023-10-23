@@ -10,11 +10,11 @@ import BlogPage from './pages/BlogPage'
 const App = () => {
   return (
     <>
-      {/* <HomePage />
+      <HomePage />
       <ShopPage />
       <ContactPage />
       <AuthPage />
-      <CartPage /> */}
+      <CartPage />
       <BlogPage />
     </>
   )
