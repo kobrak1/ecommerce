@@ -6,7 +6,6 @@ import Campaigns from "../components/Campaigns/Campaigns"
 import Blogs from "../components/Blogs/Blogs"
 import CampaignSingle from "../components/CampaignSingle/CampaignSingle"
 import Brands from "../components/Brands/Brands"
-import Policy from "../components/Policy/Policy"
 import Footer from "../components/Footer/Footer"
 
 const HomePage = () => {
@@ -20,7 +19,6 @@ const HomePage = () => {
       <Blogs />
       <CampaignSingle />
       <Brands />
-      <Policy />
       <Footer />
     </>
   )

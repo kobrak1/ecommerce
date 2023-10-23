@@ -1,8 +1,10 @@
+import Policy from '../Policy/Policy'
 import './Footer.css'
 
 const Footer = () => {
   return (
     <>
+    <Policy />
     <footer className="footer">
         <div className="subscribe-row">
         <div className="container">
