@@ -7,6 +7,7 @@ import AuthPage from './pages/AuthPage'
 import CartPage from './pages/CartPage'
 import BlogPage from './pages/BlogPage'
 import BlogDetailsPage from './pages/BlogDetailsPage'
+import ProductDetailsPage from './pages/ProductDetailsPage'
 
 const App = () => {
   return (
@@ -16,8 +17,9 @@ const App = () => {
       <ContactPage />
       <AuthPage />
       <CartPage />
-      <BlogPage /> */}
-      <BlogDetailsPage />
+      <BlogPage /> 
+      <BlogDetailsPage /> */}
+      <ProductDetailsPage />
     </>
   )
 }
