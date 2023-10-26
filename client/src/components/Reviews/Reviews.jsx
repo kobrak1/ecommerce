@@ -8,7 +8,10 @@ const Reviews = () => {
       <h3>2 reviews for Basic Colored Sweatpants With Elastic Hems</h3>
       <div className="comments">
         <ol className="comment-list">
-          <ReviewItem />
+          <ReviewItem  />
+          <ReviewItem  />
+          <ReviewItem  />
+          <ReviewItem  />
         </ol>
       </div>
       <ReviewForm />
