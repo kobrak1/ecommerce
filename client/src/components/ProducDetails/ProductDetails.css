@@ -1,3 +1,7 @@
+:root {
+  box-sizing: border-box;
+}
+
 .single-topbar {
   margin-top: 30px;
 }
