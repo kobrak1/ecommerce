@@ -1,3 +1,4 @@
+import './BreadCrumb.css'
 
 const BreadCrumb = () => {
   return (
