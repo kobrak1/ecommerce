@@ -79,7 +79,10 @@ const ProductDetails = () => {
                 </div>
                 <p className="product-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
+                  sed odio veniam, impedit nemo tempora quis culpa nam quo
+                  laudantium nostrum reprehenderit, accusantium enim ex quidem
+                  ipsum provident atque perferendis!
                 </p>
                 <form className="variations-form">
                   <div className="variations">
