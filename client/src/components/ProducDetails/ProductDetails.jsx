@@ -1,3 +1,4 @@
+import BreadCrumb from "./BreadCrumb";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
@@ -6,20 +7,7 @@ const ProductDetails = () => {
       <div className="container">
         <div className="single-product-wrapper">
           <div className="single-topbar">
-            <nav className="breadcrumb">
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Man</a>
-                </li>
-                <li>
-                  <a href="#">Pants</a>
-                </li>
-                <li>Basic Colored Sweatpants With Elastic Hems</li>
-              </ul>
-            </nav>
+          <BreadCrumb />
           </div>
           <div className="single-content">
             <main className="site-main">
