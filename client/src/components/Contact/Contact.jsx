@@ -61,7 +61,7 @@ const Contact = () => {
                     id="author"
                     name="author"
                     type="text"
-                    value=""
+                    defaultValue=""
                     size="30"
                     required=""
                   ></textarea>
