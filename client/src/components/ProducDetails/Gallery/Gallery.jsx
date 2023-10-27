@@ -8,7 +8,31 @@ const Gallery = () => {
       </div>
       <div className="product-thumb">
         <div className="glide__track" data-glide-el="track">
-          <ol className="gallery-thumbs glide__slides"></ol>
+          <ol className="gallery-thumbs glide__slides">
+            <li className="glide__slide glide__slide--active">
+              <img
+                src="img/products/product3/1.png"
+                alt=""
+                className="img-fluid active"
+              />
+            </li>
+
+            <li className="glide__slide">
+              <img
+                src="img/products/product3/2.png"
+                alt=""
+                className="img-fluid"
+              />
+            </li>
+
+            <li className="glide__slide">
+              <img
+                src="img/products/product3/3.png"
+                alt=""
+                className="img-fluid"
+              />
+            </li>
+          </ol>
         </div>
         <div className="glide__arrows" data-glide-el="controls">
           <button
