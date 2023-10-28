@@ -1,10 +1,15 @@
 import './Dialog.css'
 
-const Dialog = () => {
+const Dialog = ({isDialogShow, setIsDialogShow}) => {
+  const handleCloseDialog = (e) => {
+    const control = e.target.checked
+    localStorage.setItem('data', JSON.stringify(!control))
+  }
+
   return (
-    <div className="modal-dialog">
+    <div className={`modal-dialog ${isDialogShow ? 'show' : ''}`}>
       <div className="modal-content">
-        <button className="modal-close">
+        <button className="modal-close" onClick={() => setIsDialogShow(false)}>
           <i className="bi bi-x"></i>
         </button>
         <div className="modal-image">
@@ -23,7 +28,7 @@ const Dialog = () => {
               <input type="text" placeholder="Enter Email Address Here" />
               <button className="btn btn-primary">SUBSCRIBE</button>
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" onChange={handleCloseDialog} />
                 <span>Don&apos;t show this popup again</span>
               </label>
             </form>
