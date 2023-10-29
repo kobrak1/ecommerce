@@ -4,6 +4,7 @@ import "./Gallery.css";
 
 const Gallery = () => {
   const [activeImage, setActiveImage] = useState(productsData[0].img.thumbs[0]);
+
   return (
     <div className="product-gallery">
       <div className="single-image-wrapper">
@@ -12,11 +13,11 @@ const Gallery = () => {
       <div className="product-thumb">
         <div className="glide__track" data-glide-el="track">
           <ol className="gallery-thumbs glide__slides">
-            {productsData[0].img.thumbs.map((item, index) => {
-              <li className="glide__slide glide__slide--active" key={index}>
+            {productsData[0].img.thumbs.map((item, index) => (
+              <li className="glide__slide glide__slide--active" key={index} onClick={() => setActiveImage(item)}>
                 <img src={item} alt="" className="img-fluid active" />
-              </li>;
-            })}
+              </li>
+            ))}
           </ol>
         </div>
         <div className="glide__arrows" data-glide-el="controls">
