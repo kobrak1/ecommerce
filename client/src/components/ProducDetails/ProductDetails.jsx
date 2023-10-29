@@ -1,8 +1,8 @@
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
 import Gallery from "./Gallery/Gallery";
 import Info from "./Info/Info";
-import "./ProductDetails.css";
 import Tabs from "./Tabs/Tabs";
+import "./ProductDetails.css";
 
 const ProductDetails = () => {
   return (

@@ -1,10 +1,12 @@
+import { useState } from "react";
 import "./Gallery.css";
 
 const Gallery = () => {
+  const [activeImage, setActiveImage] = useState("img/products/product2/1.png")
   return (
     <div className="product-gallery">
       <div className="single-image-wrapper">
-        <img src="img/products/product2/1.png" id="single-image" alt="" />
+        <img src={activeImage} id="single-image" alt="" />
       </div>
       <div className="product-thumb">
         <div className="glide__track" data-glide-el="track">
