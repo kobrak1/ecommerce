@@ -1,8 +1,9 @@
 import { useState } from "react";
+import productsData from "../../../data.json";
 import "./Gallery.css";
 
 const Gallery = () => {
-  const [activeImage, setActiveImage] = useState("img/products/product2/1.png")
+  const [activeImage, setActiveImage] = useState(productsData[0].img.thumbs[0]);
   return (
     <div className="product-gallery">
       <div className="single-image-wrapper">
@@ -11,29 +12,11 @@ const Gallery = () => {
       <div className="product-thumb">
         <div className="glide__track" data-glide-el="track">
           <ol className="gallery-thumbs glide__slides">
-            <li className="glide__slide glide__slide--active">
-              <img
-                src="img/products/product3/1.png"
-                alt=""
-                className="img-fluid active"
-              />
-            </li>
-
-            <li className="glide__slide">
-              <img
-                src="img/products/product3/2.png"
-                alt=""
-                className="img-fluid"
-              />
-            </li>
-
-            <li className="glide__slide">
-              <img
-                src="img/products/product3/3.png"
-                alt=""
-                className="img-fluid"
-              />
-            </li>
+            {productsData[0].img.thumbs.map((item, index) => {
+              <li className="glide__slide glide__slide--active" key={index}>
+                <img src={item} alt="" className="img-fluid active" />
+              </li>;
+            })}
           </ol>
         </div>
         <div className="glide__arrows" data-glide-el="controls">

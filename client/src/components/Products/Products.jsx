@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProductItem from "./ProductItem";
-import ProductsData from "../../data.json";
+import productsData from "../../data.json";
 import Slider from "react-slick";
 import PropTypes from "prop-types";
 import "slick-carousel/slick/slick.css";
@@ -30,7 +30,7 @@ PrevBtn.propTypes = {
 };
 
 const Products = () => {
-  const [products] = useState(ProductsData);
+  const [products] = useState(productsData);
   let settings = {
     dots: false,
     infinite: true,
