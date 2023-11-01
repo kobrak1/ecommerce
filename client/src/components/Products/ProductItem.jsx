@@ -1,12 +1,14 @@
-import './ProductItem.css'
+import PropTypes from "prop-types";
+import "./ProductItem.css";
 
-const ProductItem = () => {
+const ProductItem = ({ productItem }) => {
+  console.log(productItem);
   return (
     <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">
         <a href="#">
-          <img src="img/products/product1/1.png" alt="" className="img1" />
-          <img src="img/products/product1/2.png" alt="" className="img2" />
+          <img src={productItem.img.singleImage} alt="" className="img1" />
+          <img src={productItem.img.thumbs[2]} alt="" className="img2" />
         </a>
       </div>
       <div className="product-info">
@@ -52,6 +54,10 @@ const ProductItem = () => {
       </div>
     </div>
   );
+};
+
+ProductItem.propTypes = {
+  productItem: PropTypes.object,
 };
 
 export default ProductItem;
