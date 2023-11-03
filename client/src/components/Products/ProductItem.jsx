@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import "./ProductItem.css";
 import { useContext } from "react";
-import CartProvider from "../../context/CartProvider";
+import { CartContext } from "../../context/CartProvider";
 
 const ProductItem = ({ productItem, setCartItems}) => {
-  const {name} = useContext(CartProvider)
+  const {name} = useContext(CartContext)
   const addToCart = (item) => {
     setCartItems((prevCart) => [...prevCart, item])
   }
@@ -12,6 +12,7 @@ const ProductItem = ({ productItem, setCartItems}) => {
     <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">
         <a href="#">
+          Name: {name}
           <img src={productItem.img.singleImage} alt="" className="img1" />
           <img src={productItem.img.thumbs[2]} alt="" className="img2" />
         </a>

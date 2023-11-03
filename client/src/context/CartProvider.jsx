@@ -1,13 +1,13 @@
 import { createContext } from "react";
 import PropTypes from "prop-types"
 
-const CartContext = createContext;
+export const CartContext = createContext();
 
 const CartProvider = ({children}) => {
     return (
         <CartContext.Provider
             value={{
-                value: 'burak'
+                name: 'burak'
             }}
         >
             {children}
