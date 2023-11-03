@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import "./ProductItem.css";
+import { useContext } from "react";
+import CartProvider from "../../context/CartProvider";
 
 const ProductItem = ({ productItem, setCartItems}) => {
+  const {name} = useContext(CartProvider)
   const addToCart = (item) => {
     setCartItems((prevCart) => [...prevCart, item])
   }
