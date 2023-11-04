@@ -3,16 +3,12 @@ import "./ProductItem.css";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartProvider";
 
-const ProductItem = ({ productItem, setCartItems}) => {
-  const {name} = useContext(CartContext)
-  const addToCart = (item) => {
-    setCartItems((prevCart) => [...prevCart, item])
-  }
+const ProductItem = ({ productItem }) => {
+  const {addToCart} = useContext(CartContext)
   return (
     <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">
         <a href="#">
-          Name: {name}
           <img src={productItem.img.singleImage} alt="" className="img1" />
           <img src={productItem.img.thumbs[2]} alt="" className="img2" />
         </a>
@@ -39,12 +35,20 @@ const ProductItem = ({ productItem, setCartItems}) => {
           </li>
         </ul>
         <div className="product-prices">
-          <strong className="new-price">${productItem.price.newPrice.toFixed(2)}</strong>
-          <span className="old-price">${productItem.price.oldPrice.toFixed(2)}</span>
+          <strong className="new-price">
+            ${productItem.price.newPrice.toFixed(2)}
+          </strong>
+          <span className="old-price">
+            ${productItem.price.oldPrice.toFixed(2)}
+          </span>
         </div>
         <span className="product-discount">-{productItem.price.newPrice}%</span>
         <div className="product-links">
-          <button className="add-to-cart" data-id="1" onClick={() => addToCart()}>
+          <button
+            className="add-to-cart"
+            data-id="1"
+            onClick={() => addToCart(productItem)}
+          >
             <i className="bi bi-basket-fill"></i>
           </button>
           <button>
