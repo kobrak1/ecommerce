@@ -4,9 +4,9 @@ import { CartContext } from "../../context/CartProvider";
 import "./ProductItem.css";
 
 const ProductItem = ({ productItem }) => {
-  const {cartItems, addToCart} = useContext(CartContext)
+  const { cartItems, addToCart } = useContext(CartContext);
   const filteredCart = cartItems.find((cartItem) => {
-    cartItem.id === productItem.id
+    return cartItem.id === productItem.id
   })
   console.log(filteredCart);
   return (
@@ -50,8 +50,8 @@ const ProductItem = ({ productItem }) => {
         <div className="product-links">
           <button
             className="add-to-cart"
-            data-id="1"
             onClick={() => addToCart(productItem)}
+            disabled={filteredCart}
           >
             <i className="bi bi-basket-fill"></i>
           </button>
