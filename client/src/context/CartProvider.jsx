@@ -9,6 +9,7 @@ const CartProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem("cartItems"))
       : []
   );
+
   const addToCart = (item) => {
     setCartItems((prevCart) => [...prevCart, item]);
   };
