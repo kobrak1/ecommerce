@@ -1,4 +1,5 @@
 import Policy from '../Policy/Policy'
+import { NavLink } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
@@ -37,10 +38,10 @@ const Footer = () => {
                 <div className="footer-contact-bottom">
                 <div className="download-app">
                     <a href="#">
-                    <img src="img/footer/app-store.png" alt=""/>
+                    <img src="/img/footer/app-store.png" alt=""/>
                     </a>
                     <a href="#">
-                    <img src="img/footer/google-play.png" alt=""/>
+                    <img src="/img/footer/google-play.png" alt=""/>
                     </a>
                 </div>
                 <p className="privacy-text">
@@ -57,7 +58,7 @@ const Footer = () => {
             <div className="footer-widgets">
             <div className="brand-info">
                 <div className="footer-logo">
-                <a href="index.html" className="logo">LOGO</a>
+                <NavLink to={'/'} className="logo">LOGO</NavLink>
                 </div>
                 <div className="footer-desc">
                 <p> Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis
@@ -163,7 +164,7 @@ const Footer = () => {
                 </p>
             </div>
             <a href="#">
-                <img src="img/footer/cards.png" alt=""/>
+                <img src="/img/footer/cards.png" alt=""/>
             </a>
             <div className="footer-menu">
                 <ul className="footer-menu-list">
