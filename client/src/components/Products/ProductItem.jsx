@@ -8,7 +8,6 @@ const ProductItem = ({ productItem }) => {
   const filteredCart = cartItems.find((cartItem) => {
     return cartItem.id === productItem.id
   })
-  console.log(filteredCart);
   return (
     <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">

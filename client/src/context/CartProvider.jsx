@@ -14,6 +14,13 @@ const CartProvider = ({ children }) => {
     setCartItems((prevCart) => [...prevCart, item]);
   };
 
+  const removeFromCart = (itemId) => {
+    const filteredCartItems = cartItems.filter((cartItem) => {
+      return cartItem.id !== itemId;
+    });
+    setCartItems(filteredCartItems);
+  };
+
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -23,6 +30,7 @@ const CartProvider = ({ children }) => {
       value={{
         addToCart,
         cartItems,
+        removeFromCart,
       }}
     >
       {children}
