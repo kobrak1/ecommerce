@@ -5,15 +5,18 @@ const CartTotals = () => {
   const [fastCargoChecked, setFastCargoChecked] = useState(false);
   const [cargoFee, setCargoFee] = useState(15);
   const { cartItems } = useContext(CartContext);
-  // create an array of prices of each items in the cart
+
+  // create an array with the prices of each items in the cart
   const cartItemTotals = cartItems.map((item) => {
     const itemTotal = item.price.newPrice * item.quantity;
     return itemTotal;
   });
+
   // calculate subtotal price
   const subTotals = cartItemTotals.reduce((previousValue, currentValue) => {
     return previousValue + currentValue;
   }, 0);
+
   // set fast cargo price
   const fastCargoPrice = (fee) => setCargoFee(fee);
   console.log(fastCargoPrice);
