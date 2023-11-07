@@ -1,6 +1,7 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const dotenv = require("dotenv");
+const mainRoute = require("./routes/index.js");
 const port = 5000;
 const app = express();
 
@@ -10,16 +11,12 @@ const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDB");
-  } catch (error) {}
+  } catch (error) {
+    console.error("An error occured:", error.message);
+  }
 };
 
-app.get("/", (req, res) => {
-  res.send("goodbye fucking world");
-});
-
-app.get("/getto", (req, res) => {
-  res.send("goodbye");
-});
+app.use("/api", mainRoute);
 
 app.listen(port, () => {
   connect();
