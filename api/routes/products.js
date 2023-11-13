@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  res.send("Products are acquired");
-});
+// Tüm ürünleri getirme (Read- All)
+router.get("/", async (req, res)=> {
+    res.send("Ürünler getirildi!");
+})
+
 
 module.exports = router;

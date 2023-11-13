@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-//  all routes
-const productRoute = require("./products.js");
+// Diğer rota dosyalarını içe aktarıyoruz
 const categoryRoute = require("./categories.js");
+const productRoute = require("./products.js");
 
-// define path for each routes
+// Her rotayı ilgili yol altında kullanıyoruz
 router.use("/categories", categoryRoute);
 router.use("/products", productRoute);
 
