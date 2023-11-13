@@ -41,7 +41,23 @@ router.get("/:categoryId", async (req, res) => {
       console.log(error);
       res.status(404).json({ error: "Category not found." });
     }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
 
+// Update a specific category
+router.put("/:categoryId", async (req, res) => {
+  try {
+    const categoryId = req.params.categoryId;
+    const updates = req.body;
+
+    const updatedCategory = await Category.findByIdAndUpdate(
+      categoryId,
+      updates
+    );
+    res.status(200).json(updatedCategory);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Server error." });
