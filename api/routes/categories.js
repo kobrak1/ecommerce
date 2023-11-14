@@ -55,9 +55,29 @@ router.put("/:categoryId", async (req, res) => {
 
     const updatedCategory = await Category.findByIdAndUpdate(
       categoryId,
-      updates
+      updates,
+      { new: true }
     );
     res.status(200).json(updatedCategory);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
+
+// Delete a specific category
+router.delete("/:categoryId", async (req, res) => {
+  try {
+    const categoryId = req.params.categoryId;
+
+    const deletedCategory = await Category.findByIdAndDelete(categoryId);
+
+    if (!deletedCategory) {
+      return res.status(404).json({ error: "Category not found." });
+    }
+
+    res.status(200).json(deletedCategory);
+    console.log('Data deleted');
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Server error." });
