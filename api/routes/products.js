@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Product = require("../models/Product.js");
 
-// Add a new category (Create)
+// Add a new product (Create)
 router.post("/", async (req, res) => {
   try {
     const newProduct = new Product(req.body);
@@ -39,6 +39,24 @@ router.get("/:productId", async (req, res) => {
       console.log(error);
       res.status(404).json({ error: "Product not found." });
     }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
+
+// Update a specific product
+router.put("/:productId", async (req, res) => {
+  try {
+    const productId = req.params.productId;
+    const updates = req.body;
+
+    const updatedProduct = await Product.findByIdAndUpdate(
+      productId,
+      updates,
+      { new: true }
+    );
+    res.status(200).json(updatedProduct);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Server error." });
