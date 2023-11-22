@@ -1,6 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -10,11 +10,13 @@ const Login = () => {
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
+  // handle input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // handle register button
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -25,23 +27,29 @@ const Login = () => {
         },
         body: JSON.stringify(formData),
       });
-
+      console.log(response);
+  
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
         localStorage.setItem("user", JSON.stringify(data));
-        message.success("Giriş başarılı.");
+        message.success("Login successful.");
         if (data.role === "admin") {
           window.location.href = "/admin";
         } else {
           navigate("/");
         }
       } else {
-        message.error("Giriş başarısız.");
+        const errorData = await response.json(); // Assuming the server sends JSON error details
+        console.error("Login failed. Server response:", response.status, errorData);
+        message.error("Login failed. Please check your credentials.");
       }
     } catch (error) {
-      console.log("Giriş hatası:", error);
+      console.error("Login error:", error);
+      message.error("An error occurred during login.");
     }
   };
+  
 
   return (
     <div className="account-column">
