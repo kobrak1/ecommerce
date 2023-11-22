@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { message } from "antd";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
-    email: "",
     password: "",
+    email: "",
   });
+
+  const navigate = useNavigate();
 
   // handle input change
   const handleInputChange = (e) => {
@@ -14,10 +18,28 @@ const Register = () => {
   };
 
   // handle register button
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    console.log("form submitted successfully");
+    try {
+      const response = await fetch(`http://localhost:5000/api/auth/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem("user", JSON.stringify(data));
+        message.success("User registration successfull.");
+        navigate("/");
+      } else {
+        message.error("User registration failed.");
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
   // web developer's oath, alway keep open console to see if there is an error

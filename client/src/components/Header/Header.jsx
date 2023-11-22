@@ -7,7 +7,7 @@ import "./Header.css";
 function Header({ setIsSearchShow }) {
   const { cartItems } = useContext(CartContext);
   const { pathname } = useLocation();
-  console.log(window.location);
+  // console.log(window.location);
   return (
     <header>
       <div className="global-notification">
