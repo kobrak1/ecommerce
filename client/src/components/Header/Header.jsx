@@ -8,6 +8,7 @@ function Header({ setIsSearchShow }) {
   const { cartItems } = useContext(CartContext);
   const { pathname } = useLocation();
   // console.log(window.location);
+  const user = localStorage.getItem("user");
   return (
     <header>
       <div className="global-notification">
@@ -211,7 +212,11 @@ function Header({ setIsSearchShow }) {
             </div>
             <div className="header-right">
               <div className="header-right-links">
-                <NavLink to={"/auth"} className="header-account">
+                <NavLink
+                  to={"/auth"}
+                  className="header-account"
+                  title="Profile"
+                >
                   <i className="bi bi-person"></i>
                 </NavLink>
                 <button
@@ -232,6 +237,20 @@ function Header({ setIsSearchShow }) {
                     </span>
                   </NavLink>
                 </div>
+                {user && (
+                  <button
+                    className="logout-button"
+                    title="Logout"
+                    onClick={() => {
+                      if (window.confirm("Are you sure you want to logout?")) {
+                        localStorage.removeItem("user");
+                        window.location.href = "/";
+                      }
+                    }}
+                  >
+                    <i className="bi bi-box-arrow-right"></i>
+                  </button>
+                )}
               </div>
             </div>
           </div>
