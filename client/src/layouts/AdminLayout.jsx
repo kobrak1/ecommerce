@@ -168,7 +168,6 @@ const AdminLayout = ({ children }) => {
                 }}
               >
                 {children}
-                products
               </div>
             </Content>
           </Layout>

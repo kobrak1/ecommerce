@@ -1,6 +1,7 @@
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
-//PAGES
+// Style
+import './App.css'
+//Pages
 import HomePage from './pages/HomePage'
 import ShopPage from './pages/ShopPage'
 import ContactPage from './pages/ContactPage'
@@ -9,6 +10,7 @@ import CartPage from './pages/CartPage'
 import BlogPage from './pages/BlogPage'
 import BlogDetailsPage from './pages/BlogDetailsPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
+import AdminUserPage from './pages/AdminUserPage'
 
 const App = () => {
   return (
@@ -21,6 +23,9 @@ const App = () => {
       <Route path='/blog' element={<BlogPage />} />
       <Route path='/productdetails/:id' element={<ProductDetailsPage />} />
       <Route path='/blogdetails/:id' element={<BlogDetailsPage />} />
+      <Route path='/admin/' >
+        <Route path='/users' element={<AdminUserPage />} />
+      </Route>
     </Routes>
   )
 }
