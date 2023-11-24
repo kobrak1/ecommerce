@@ -1,4 +1,4 @@
-import { Table, message } from "antd";
+import { Button, Popconfirm, Table, message } from "antd";
 import { useCallback, useEffect, useState } from "react";
 
 const AdminUserPage = () => {
@@ -27,6 +27,7 @@ const AdminUserPage = () => {
       title: "Username",
       dataIndex: "username",
       key: "username",
+      render: (e) => <p style={{ fontWeight: "bold" }}>{e}</p>,
     },
     {
       title: "Email",
@@ -37,6 +38,22 @@ const AdminUserPage = () => {
       title: "Role",
       dataIndex: "role",
       key: "role",
+    },
+    {
+      title: "Actions",
+      dataIndex: "actions",
+      key: "actions",
+      render: (_, record) => (
+        <Popconfirm
+          title="Delete the task"
+          description="Are you sure to delete this task?"
+          okText="Yes"
+          cancelText="No"
+          onConfirm={() => deleteUser(record.email)}
+        >
+          <Button danger>Delete</Button>
+        </Popconfirm>
+      ),
     },
   ];
 
@@ -64,6 +81,24 @@ const AdminUserPage = () => {
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
+
+  // to send e request to delete a user by its email
+  const deleteUser = async (userEmail) => {
+    try {
+      const response = await fetch(`${apiUrl}/api/users/${userEmail}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        message.success("User successfully removed");
+        fetchUsers();
+      } else {
+        message.error("Failed to remove");
+      }
+    } catch (error) {
+      console.log("Delete error:", error);
+    }
+  };
 
   return (
     <Table
