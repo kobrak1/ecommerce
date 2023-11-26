@@ -13,6 +13,7 @@ import ProductDetailsPage from './pages/ProductDetailsPage'
 import UserPage from './pages/admin/UserPage'
 import CategoryPage from './pages/admin/Categories.jsx/CategoryPage'
 import UpdateCategoryPage from './pages/admin/Categories.jsx/UpdateCategoryPage'
+import CreateCategoryPage from './pages/admin/Categories.jsx/CreateCategoryPage'
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path='users' element={<UserPage />} />
         <Route path='categories' element={ <CategoryPage /> } />
         <Route path='categories/update/:id' element={ <UpdateCategoryPage /> } />
+        <Route path='categories/create' element={ <CreateCategoryPage /> } />
       </Route>
     </Routes>
   )
