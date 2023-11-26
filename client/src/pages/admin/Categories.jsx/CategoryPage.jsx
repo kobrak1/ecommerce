@@ -1,4 +1,4 @@
-import { Button, Popconfirm, Table, message } from "antd";
+import { Button, Popconfirm, Space, Table, message } from "antd";
 import { useCallback, useEffect, useState } from "react";
 
 const CategoryPage = () => {
@@ -24,15 +24,20 @@ const CategoryPage = () => {
       dataIndex: "actions",
       key: "actions",
       render: (_, record) => (
-        <Popconfirm
-          title="Delete the task"
-          description="Are you sure to delete this task?"
-          okText="Yes"
-          cancelText="No"
-          onConfirm={() => deleteCategory(record._id)}
-        >
-          <Button danger>Delete</Button>
-        </Popconfirm>
+        <Space>
+            <Button type="primary">
+                Update
+            </Button>
+          <Popconfirm
+            title="Delete the task"
+            description="Are you sure to delete this task?"
+            okText="Yes"
+            cancelText="No"
+            onConfirm={() => deleteCategory(record._id)}
+          >
+            <Button danger>Delete</Button>
+          </Popconfirm>
+        </Space>
       ),
     },
   ];
