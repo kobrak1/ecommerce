@@ -1,10 +1,12 @@
 import { Button, Popconfirm, Space, Table, message } from "antd";
 import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CategoryPage = () => {
   const [dataSource, setDataSource] = useState([]);
   const [loading, setLoading] = useState(false);
   const apiUrl = import.meta.env.VITE_API_BASE_URL;
+  const navigate = useNavigate();
 
   const columns = [
     {
@@ -25,9 +27,12 @@ const CategoryPage = () => {
       key: "actions",
       render: (_, record) => (
         <Space>
-            <Button type="primary">
-                Update
-            </Button>
+          <Button
+            type="primary"
+            onClick={() => navigate(`/admin/categories/update/${record._id}`)}
+          >
+            Update
+          </Button>
           <Popconfirm
             title="Delete the task"
             description="Are you sure to delete this task?"
