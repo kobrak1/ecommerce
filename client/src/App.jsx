@@ -10,7 +10,8 @@ import CartPage from './pages/CartPage'
 import BlogPage from './pages/BlogPage'
 import BlogDetailsPage from './pages/BlogDetailsPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
-import AdminUserPage from './pages/AdminUserPage'
+import UserPage from './pages/admin/UserPage'
+import CategoryPage from './pages/admin/Categories.jsx/CategoryPage'
 
 const App = () => {
   return (
@@ -24,7 +25,8 @@ const App = () => {
       <Route path='/productdetails/:id' element={<ProductDetailsPage />} />
       <Route path='/blogdetails/:id' element={<BlogDetailsPage />} />
       <Route path='/admin/*' >
-        <Route path='users' element={<AdminUserPage />} />
+        <Route path='users' element={<UserPage />} />
+        <Route path='categories' element={ <CategoryPage /> } />
       </Route>
     </Routes>
   )
