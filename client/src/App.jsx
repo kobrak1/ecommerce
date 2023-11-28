@@ -11,9 +11,10 @@ import BlogPage from './pages/BlogPage'
 import BlogDetailsPage from './pages/BlogDetailsPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
 import UserPage from './pages/admin/UserPage'
-import CategoryPage from './pages/admin/Categories.jsx/CategoryPage'
-import UpdateCategoryPage from './pages/admin/Categories.jsx/UpdateCategoryPage'
-import CreateCategoryPage from './pages/admin/Categories.jsx/CreateCategoryPage'
+import CategoryPage from './pages/admin/Categories/CategoryPage'
+import UpdateCategoryPage from './pages/admin/Categories/UpdateCategoryPage'
+import CreateCategoryPage from './pages/admin/Categories/CreateCategoryPage'
+import CreateProductPage from './pages/admin/Products/CreateProductPage'
 
 const App = () => {
   return (
@@ -29,8 +30,9 @@ const App = () => {
       <Route path='/admin/*' >
         <Route path='users' element={<UserPage />} />
         <Route path='categories' element={ <CategoryPage /> } />
-        <Route path='categories/update/:id' element={ <UpdateCategoryPage /> } />
         <Route path='categories/create' element={ <CreateCategoryPage /> } />
+        <Route path='categories/update/:id' element={ <UpdateCategoryPage /> } />
+        <Route path="products/create" element={<CreateProductPage />} />
       </Route>
     </Routes>
   )
