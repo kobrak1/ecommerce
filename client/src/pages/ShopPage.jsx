@@ -1,6 +1,6 @@
-import CampaignSingle from "../components/CampaignSingle/CampaignSingle"
-import Categories from "../components/Categories/Categories"
-import Products from "../components/Products/Products"
+import CampaignSingle from "../components/CampaignSingle/CampaignSingle";
+import Categories from "../components/Categories/Categories";
+import Products from "../components/Products/Products";
 
 const ShopPage = () => {
   return (
@@ -10,7 +10,7 @@ const ShopPage = () => {
       <CampaignSingle />
       <Products />
     </>
-  )
-}
+  );
+};
 
-export default ShopPage
+export default ShopPage;

@@ -125,7 +125,7 @@ const AdminLayout = ({ children }) => {
       icon: <RollbackOutlined />,
       label: "Homepage",
       onClick: () => {
-        navigate(`/`);
+        window.location.href = "/";
       },
     },
   ];

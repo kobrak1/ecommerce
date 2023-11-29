@@ -52,7 +52,7 @@ const UpdateCouponPage = () => {
           });
         }
       } catch (error) {
-        console.log("Veri hatası:", error);
+        console.log("Data error:", error);
       } finally {
         setLoading(false);
       }

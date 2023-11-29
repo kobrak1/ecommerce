@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     const existingCoupon = await Coupon.findOne({ code });
 
     if (existingCoupon) {
-      return res.status(400).json({ error: "This coupon is alread exists." });
+      return res.status(400).json({ error: "This coupon is already exists." });
     }
 
     const newCoupon = new Coupon(req.body);
@@ -60,11 +60,9 @@ router.put("/:couponId", async (req, res) => {
     const couponId = req.params.couponId;
     const updates = req.body;
 
-    const updatedCoupon = await Coupon.findByIdAndUpdate(
-      couponId,
-      updates,
-      { new: true }
-    );
+    const updatedCoupon = await Coupon.findByIdAndUpdate(couponId, updates, {
+      new: true,
+    });
     res.status(200).json(updatedCoupon);
   } catch (error) {
     console.log(error);

@@ -16,7 +16,7 @@ const CreateCouponPage = () => {
         },
         body: JSON.stringify(values),
       });
-
+      console.log(response);
       if (response.ok) {
         message.success("Coupon created successfully.");
         form.resetFields();
@@ -34,7 +34,7 @@ const CreateCouponPage = () => {
     <Spin spinning={loading}>
       <Form name="basic" layout="vertical" onFinish={onFinish} form={form}>
         <Form.Item
-          label="Kupon Kodu"
+          label="Coupon Code"
           name="code"
           rules={[
             {
