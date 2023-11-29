@@ -16,6 +16,7 @@ import UpdateCategoryPage from "./pages/admin/Categories/UpdateCategoryPage";
 import CreateCategoryPage from "./pages/admin/Categories/CreateCategoryPage";
 import CreateProductPage from "./pages/admin/Products/CreateProductPage";
 import ProductPage from "./pages/admin/Products/ProductPage";
+import UpdateProductPage from "./pages/admin/Products/UpdateProductPage";
 
 const App = () => {
   return (
@@ -33,8 +34,9 @@ const App = () => {
         <Route path="categories" element={<CategoryPage />} />
         <Route path="categories/create" element={<CreateCategoryPage />} />
         <Route path="categories/update/:id" element={<UpdateCategoryPage />} />
-        <Route path="products/create" element={<CreateProductPage />} />
         <Route path="products" element={<ProductPage />} />
+        <Route path="products/create" element={<CreateProductPage />} />
+        <Route path="products/update/:id" element={<UpdateProductPage />} />
       </Route>
     </Routes>
   );
