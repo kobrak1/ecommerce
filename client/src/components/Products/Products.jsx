@@ -1,40 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
-import productsData from "../../data.json";
 import Slider from "react-slick";
 import PropTypes from "prop-types";
+import "./Products.css";
+import { message } from "antd";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Products.css";
 
-const NextBtn = ({ onClick }) => {
+
+function NextBtn({ onClick }) {
   return (
     <button className="glide__arrow glide__arrow--right" onClick={onClick}>
       <i className="bi bi-chevron-right"></i>
     </button>
   );
-};
+}
+
 NextBtn.propTypes = {
   onClick: PropTypes.func,
 };
 
-const PrevBtn = ({ onClick }) => {
+function PrevBtn({ onClick }) {
   return (
     <button className="glide__arrow glide__arrow--left" onClick={onClick}>
       <i className="bi bi-chevron-left"></i>
     </button>
   );
-};
+}
+
 PrevBtn.propTypes = {
   onClick: PropTypes.func,
 };
 
 const Products = () => {
-  const [products] = useState(productsData);
-  let settings = {
+  const [products, setProducts] = useState([]);
+
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/products`);
+
+        if (response.ok) {
+          const data = await response.json();
+          setProducts(data);
+        } else {
+          message.error("Data fetch failed.");
+        }
+      } catch (error) {
+        console.log("Data error:", error);
+      }
+    };
+    fetchProducts();
+  }, [apiUrl]);
+
+  const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <NextBtn />,
@@ -48,6 +71,12 @@ const Products = () => {
           slidesToShow: 2,
         },
       },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
     ],
   };
 
@@ -59,9 +88,9 @@ const Products = () => {
           <p>Summer Collection New Morden Design</p>
         </div>
         <div className="product-wrapper product-carousel">
-          <Slider {...settings}>
+          <Slider {...sliderSettings}>
             {products.map((product) => (
-              <ProductItem productItem={product} key={product.id} />
+              <ProductItem productItem={product} key={product._id} />
             ))}
           </Slider>
         </div>

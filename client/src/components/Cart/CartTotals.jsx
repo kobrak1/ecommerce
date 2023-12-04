@@ -3,23 +3,23 @@ import { CartContext } from "../../context/CartProvider";
 
 const CartTotals = () => {
   const [fastCargoChecked, setFastCargoChecked] = useState(false);
-  const [cargoFee, setCargoFee] = useState(15);
   const { cartItems } = useContext(CartContext);
 
-  // create an array with the prices of each items in the cart
   const cartItemTotals = cartItems.map((item) => {
-    const itemTotal = item.price.newPrice * item.quantity;
+    const itemTotal = item.price * item.quantity;
+
     return itemTotal;
   });
 
-  // calculate subtotal price
   const subTotals = cartItemTotals.reduce((previousValue, currentValue) => {
     return previousValue + currentValue;
   }, 0);
 
-  // set fast cargo price
-  const fastCargoPrice = (fee) => setCargoFee(fee);
-  console.log(fastCargoPrice);
+  const cargoFee = 15;
+
+  const cartTotals = fastCargoChecked
+    ? (subTotals + cargoFee).toFixed(2)
+    : subTotals.toFixed(2);
 
   return (
     <div className="cart-totals">
@@ -38,7 +38,7 @@ const CartTotals = () => {
               <ul>
                 <li>
                   <label>
-                    Fast Cargo: ${cargoFee}
+                    Fast Cargo: $15.00
                     <input
                       type="checkbox"
                       id="fast-cargo"
@@ -56,12 +56,7 @@ const CartTotals = () => {
           <tr>
             <th>Total</th>
             <td>
-              <strong id="cart-total">
-                $
-                {fastCargoChecked === true
-                  ? (subTotals + cargoFee).toFixed(2)
-                  : subTotals.toFixed(2)}
-              </strong>
+              <strong id="cart-total">${cartTotals}</strong>
             </td>
           </tr>
         </tbody>
