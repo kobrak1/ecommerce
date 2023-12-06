@@ -12,13 +12,13 @@ const ProductDetailsPage = () => {
       try {
         const response = await fetch(`${apiUrl}/api/products/${productId}`);
         if (!response.ok) {
-          throw new Error("Verileri getirme hatası");
+          throw new Error("Data fetch error");
         }
 
         const data = await response.json();
         setSingleProduct(data);
       } catch (error) {
-        console.log("Veri hatası:", error);
+        console.log("Data error:", error);
       }
     };
     fetchSingleProduct();
@@ -27,7 +27,7 @@ const ProductDetailsPage = () => {
   return singleProduct ? (
     <ProductDetails singleProduct={singleProduct} />
   ) : (
-    <p>Ürün Yükleniyor</p>
+    <p>Product uploading...</p>
   );
 };
 

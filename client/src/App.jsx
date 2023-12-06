@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 // Style
 import "./App.css";
-//Pages
+// Pages
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import ContactPage from "./pages/ContactPage";
@@ -30,8 +30,8 @@ const App = () => {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/blog" element={<BlogPage />} />
-      <Route path="/productdetails/:id" element={<ProductDetailsPage />} />
-      <Route path="/blogdetails/:id" element={<BlogDetailsPage />} />
+      <Route path="/product/:id" element={<ProductDetailsPage />} />
+      <Route path="/blog/:id" element={<BlogDetailsPage />} />
       <Route path="/admin/*">
         <Route path="users" element={<UserPage />} />
         <Route path="categories" element={<CategoryPage />} />
