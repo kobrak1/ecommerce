@@ -28,7 +28,7 @@ function Header({ setIsSearchShow }) {
             </div>
             <div className="header-left">
               <NavLink to={"/"} className="logo">
-                LOGO
+                <img src="../../../public/img/header/zip_logo_neww.jpg" alt="#" style={{width:"120px"}} />
               </NavLink>
             </div>
             <div className="header-center" id="sidebar">

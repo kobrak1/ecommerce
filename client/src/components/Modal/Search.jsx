@@ -17,7 +17,7 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
     const productName = e.target[0].value;
 
     if (productName.trim().length === 0) {
-      message.warning("Boş karakter arayamazsınız!");
+      message.warning("You can not search an empty character!");
       return;
     }
 
@@ -27,7 +27,7 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
       );
 
       if (!res.ok) {
-        message.error("Ürün getirme hatası!");
+        message.error("Product fetch error!");
         return;
       }
 
@@ -37,6 +37,7 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
       console.log(error);
     }
   };
+
 
   return (
     <div className={`modal-search ${isSearchShow ? "show" : ""} `}>
@@ -71,7 +72,7 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
                   width: "100%",
                 }}
               >
-                Ürün Ara...
+                Search product...
               </b>
             )}
             {searchResults?.length === 0 && (
@@ -83,7 +84,7 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
                   width: "100%",
                 }}
               >
-                😔Aradığınız Ürün Bulunamadı😔
+                😔Could not find the product you are looking for😔
               </a>
             )}
             {searchResults?.length > 0 &&
