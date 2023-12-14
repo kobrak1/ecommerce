@@ -1,0 +1,9 @@
+# render.yaml
+
+services:
+  - name: web
+    buildCommand: yarn build
+    startCommand: yarn start
+    env:
+      - key: NODE_ENV
+        value: production
