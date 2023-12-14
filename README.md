@@ -1,6 +1,7 @@
 # E-commerce Project
 
 This project is a full-stack e-commerce site with an admin panel and payment method developed using the MERN (MongoDB, Express.js, React, Node.js) stack.
+
 ![img6](https://github.com/kobrak1/e-commerce/assets/114083611/2fc7ab33-7c35-4eae-9bd4-73881d526a54)
 ![img5](https://github.com/kobrak1/e-commerce/assets/114083611/203c2b63-ce49-48cd-90d3-ca02123fcb45)
 ![img4](https://github.com/kobrak1/e-commerce/assets/114083611/fef5aff2-d6e1-4204-9004-4a17dcc80a02)
