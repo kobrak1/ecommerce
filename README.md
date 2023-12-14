@@ -25,8 +25,8 @@ This project is a full-stack e-commerce site with an admin panel and payment met
 ## Used Technologies
 
 - React
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 - Ant Design
 - Node.js
