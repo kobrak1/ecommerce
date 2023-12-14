@@ -13,7 +13,11 @@ This project is a full-stack e-commerce site with an admin panel and payment met
 ## Used Technologies
 
 - React
+- HTML
+- CSS
+- JavaScript
 - Ant Design
+- Node.js
 - Express.js
 - MongoDB
 
