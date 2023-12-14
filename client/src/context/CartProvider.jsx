@@ -10,7 +10,12 @@ const CartProvider = ({ children }) => {
       : []
   );
 
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   const addToCart = (cartItem) => {
+    // setCartItems([...cartItems, cartItem]); 1. yol
     setCartItems((prevCart) => [
       ...prevCart,
       {
@@ -24,18 +29,16 @@ const CartProvider = ({ children }) => {
     const filteredCartItems = cartItems.filter((cartItem) => {
       return cartItem._id !== itemId;
     });
+
     setCartItems(filteredCartItems);
   };
-
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
 
   return (
     <CartContext.Provider
       value={{
-        addToCart,
         cartItems,
+        setCartItems,
+        addToCart,
         removeFromCart,
       }}
     >
