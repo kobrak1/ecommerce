@@ -1,0 +1,15 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "Full Stack E-Commerce App",
+  "scripts": {
+    "start": "npm install && npm run build && npm run start-server",
+    "build": "cd api && npm install  && cd ../client && npm install && npm run build",
+    "build-client": "cd client && npm install && npm run build",
+    "build-api": "cd api && npm install && npm run build",
+    "start-server": "cd api && npm run start"
+  },
+  "dependencies": {
+    "concurrently": "^6.0.2" // Install this package globally: npm install -g concurrently
+  }
+}
