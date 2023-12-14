@@ -25,7 +25,7 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          <h2>No product in the cart!</h2>
+          <h2>There is no any product in the cart!</h2>
         )}
       </div>
     </section>
