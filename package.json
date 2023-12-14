@@ -1,0 +1,19 @@
+{
+    "name": "e-commerce",
+    "version": "1.0.0",
+    "scripts": {
+        "client-install": "cd client && npm install",
+        "client-start": "cd client && npm start",
+        "api-install": "cd api && npm install",
+        "api-start": "cd api && npm start",
+        "start": "npm run client-install && npm run client-start",
+        "dev": "concurrently \"npm run api-start\" \"npm run client-start\"",
+        "build": "cd client && npm run build"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "engines": {
+        "node": "20.x"
+    }
+}
