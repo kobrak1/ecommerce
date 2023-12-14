@@ -21,7 +21,7 @@ This project is a full-stack e-commerce site with an admin panel and payment met
 
 Follow these steps to download your project files to your computer:
 
-1. [Download the project](link)
+1. [Fork the project](https://github.com/kobrak1/e-commerce/fork)
 2. Go to the project directory: `cd e-commerce`
 3. Install required dependencies: `npm install`
 4. Go to the api directory: `cd api`
