@@ -40,4 +40,4 @@ If you would like to contribute to this project, please submit a pull request. T
 
 ## Licence
 
-This project is licensed under the MIT License. See the [LICENSE] file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kobrak1/e-commerce/blob/main/LICENSE) file for details.
