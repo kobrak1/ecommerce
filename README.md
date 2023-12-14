@@ -16,10 +16,9 @@ This project is a full-stack e-commerce site with an admin panel and payment met
 
 ## Features
 
-- Product and Category Management
+- Product and Category Management on Admin Panel
 - Payment Method Integration
-- Coupon Codes
-- Admin Panel
+- Coupon Codes to apply discounts on specific products
 - Cart Transactions
 
 ## Used Technologies
