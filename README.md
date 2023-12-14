@@ -20,6 +20,7 @@ This project is a full-stack e-commerce site with an admin panel and payment met
 - Payment Method Integration
 - Coupon Codes to apply discounts on specific products
 - Cart Transactions
+- Blog Page where you can share your thoughts to inform people
 
 ## Used Technologies
 
