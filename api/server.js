@@ -10,6 +10,7 @@ const port = 5000;
 dotenv.config();
 
 const connect = async () => {
+  console.log("Connecting");
   try {
     console.log("Connecting to mongoDB...");
     await mongoose.connect(process.env.MONGO_URI);
@@ -18,6 +19,7 @@ const connect = async () => {
     console.error("Error connecting to MongoDB:", error);
     process.exit(1);
   }
+  console.log("connected");
 };
 
 // middlewares
