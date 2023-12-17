@@ -9,17 +9,33 @@ const port = 5000;
 
 dotenv.config();
 
+// const connect = async () => {
+//   console.log("Connecting");
+//   try {
+//     console.log("Connecting to mongoDB...");
+//     await mongoose.connect(process.env.MONGO_URI);
+//     console.log("Connected to mongoDB");
+//   } catch (error) {
+//     console.error("Error connecting to MongoDB:", error);
+//     process.exit(1);
+//   }
+//   console.log("connected");
+// };
+
 const connect = async () => {
   console.log("Connecting");
   try {
-    console.log("Connecting to mongoDB...");
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("Connected to mongoDB");
+    console.log("Connecting to MongoDB...");
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
     process.exit(1);
   }
-  console.log("connected");
+  console.log("Connected");
 };
 
 // middlewares
