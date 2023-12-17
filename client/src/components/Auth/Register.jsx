@@ -17,11 +17,13 @@ const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
   // handle register button
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/register`, {
+      const response = await fetch(`${apiUrl}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
