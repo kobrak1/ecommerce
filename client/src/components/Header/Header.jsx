@@ -226,7 +226,7 @@ function Header({ setIsSearchShow }) {
                 >
                   <i className="bi bi-search"></i>
                 </button>
-                <NavLink to={"/admin/*"}>
+                <NavLink to={"/admin/users"}>
                   <i className="bi bi-heart"></i>
                 </NavLink>
                 <div className="header-cart">
