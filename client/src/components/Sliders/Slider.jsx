@@ -15,15 +15,15 @@ const Sliders = () => {
       <section className="slider">
         <div className="slider-elements">
           {counter === 0 && (
-            <SliderItem imageSrc="../../../public/img/slider/slider1.jpg" />
+            <SliderItem imageSrc="../../../img/slider/slider1.jpg" />
           )}
 
           {counter === 1 && (
-            <SliderItem imageSrc="../../../public/img/slider/slider2.jpg" />
+            <SliderItem imageSrc="../../../img/slider/slider2.jpg" />
           )}
 
           {counter === 2 && (
-            <SliderItem imageSrc="../../../public/img/slider/slider3.jpg" />
+            <SliderItem imageSrc="../../../img/slider/slider3.jpg" />
           )}
           <div className="slider-buttons">
             <button onClick={() => increase()}>
