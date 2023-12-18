@@ -10,8 +10,8 @@ const SliderItem = ({ imageSrc }) => {
       <div className="container">
         <p className="slider-title">SUMMER 2024</p>
         <h2 className="slider-heading">Save up to 70%</h2>
-        <a href="#" className="btn btn-lg btn-primary" style={{color:"#fff"}}>
-          <Link to={"/shop"}>Explore Now</Link>
+        <a href="#" className="btn btn-lg btn-primary" >
+          <Link to={"/shop"}><p style={{color:"#fff"}}>Explore Now</p></Link>
         </a>
       </div>
     </div>
