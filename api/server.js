@@ -39,8 +39,6 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "index.html"));
   });
-} else {
-  console.log("It doesn't work brı, just give up.");
 }
 
 app.listen(port, async () => {
