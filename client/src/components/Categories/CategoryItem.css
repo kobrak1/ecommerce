@@ -5,6 +5,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    border-radius: .7rem;
+    box-shadow: 4px 4px 4px rgba(125, 124, 124, 0.2);
 }
 
 .categories .category-item a{

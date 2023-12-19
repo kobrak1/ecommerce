@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 const SliderItem = ({ imageSrc }) => {
   return (
@@ -8,18 +7,18 @@ const SliderItem = ({ imageSrc }) => {
         <img src={imageSrc} className="img-fluid" alt="" />
       </div>
       <div className="container">
-        <p className="slider-title">SUMMER 2024</p>
+        <p className="slider-title">SUMMER 2022</p>
         <h2 className="slider-heading">Save up to 70%</h2>
-        <a href="#" className="btn btn-lg btn-primary" >
-          <Link to={"/shop"}><p style={{color:"#fff"}}>Explore Now</p></Link>
+        <a href="https://zx-commerce.onrender.com/shop" className="btn btn-lg btn-primary">
+          Explore Now
         </a>
       </div>
     </div>
   );
 };
 
+export default SliderItem;
+
 SliderItem.propTypes = {
   imageSrc: PropTypes.string,
 };
-
-export default SliderItem;

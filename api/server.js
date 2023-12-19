@@ -10,8 +10,8 @@ const port = process.env.PORT || 5000; // Use the provided PORT or default to 50
 
 dotenv.config();
 
+// function to connect the mongodb
 const connect = async () => {
-  console.log("Connecting");
   try {
     console.log("Connecting to mongoDB...");
     await mongoose.connect(process.env.MONGO_URI);
@@ -20,7 +20,6 @@ const connect = async () => {
     console.error("Error connecting to MongoDB:", error);
     process.exit(1);
   }
-  console.log("Connected");
 };
 
 // middlewares
@@ -35,7 +34,7 @@ if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client"));
 
-  // Serve the React app's HTML file for any other routes
+  // Serve the React's HTML file for any other routes
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "index.html"));
   });

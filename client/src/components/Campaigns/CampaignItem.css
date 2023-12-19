@@ -4,6 +4,8 @@
     background-position: center;
     flex: 1;
     color: white;
+    border-radius: .7rem;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   }
   
   .campaigns .campaign-item .campaign-title {
