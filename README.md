@@ -1,5 +1,13 @@
 # E-Commerce Website
 
+![img1](https://github.com/kobrak1/e-commerce/assets/114083611/3313cab8-bdee-4aa7-8a17-c8a4f40bff47)
+
+![img2](https://github.com/kobrak1/e-commerce/assets/114083611/964950fb-f69b-4083-806f-9994de6be8e1)
+
+![img3](https://github.com/kobrak1/e-commerce/assets/114083611/21651845-caa3-441e-93b2-2acdb1ff1691)
+
+![img5](https://github.com/kobrak1/e-commerce/assets/114083611/1311f828-8699-4fe1-9029-ee6768c744f3)
+
 This project is a full-stack e-commerce website built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It provides a platform for users to browse products, add them to the cart, and proceed with the checkout process.
 
 ## Table of Contents
