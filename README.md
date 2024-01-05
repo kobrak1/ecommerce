@@ -89,7 +89,7 @@ To get started with the project, follow the steps below:
     npm run dev
 
 ### License
-This project is licensed under the MIT License - see the LICENSE() file for details.    
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/kobrak1/e-commerce/blob/main/LICENSE) file for details.    
 
 
 
