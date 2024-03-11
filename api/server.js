@@ -23,9 +23,10 @@ const connect = async () => {
 };
 
 // middlewares
-app.use(logger("dev"));
-app.use(express.json());
 app.use(cors());
+app.use(express.static('dist'))
+app.use(express.json());
+app.use(logger("dev"));
 
 app.use("/api", mainRoute);
 
