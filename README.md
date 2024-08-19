@@ -96,6 +96,12 @@ To get started with the project, follow the steps below:
     cd client
     npm run dev
 
+### IMPORTANT!!!
+You can test monitor the admin panel by logging in with these credentials;
+username: admin
+email: admin@gmail.com
+password: admin123
+
 ### License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/kobrak1/e-commerce/blob/main/LICENSE) file for details.    
 
