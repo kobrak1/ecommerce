@@ -97,9 +97,9 @@ To get started with the project, follow the steps below:
     npm run dev
 
 ### IMPORTANT!!!
-You can test monitor the admin panel by logging in with these credentials;
--username: admin
--email: admin@gmail.com
+You can test monitor the admin panel by logging in with these credentials;  
+-username: admin  
+-email: admin@gmail.com  
 -password: admin123
 
 ### License
