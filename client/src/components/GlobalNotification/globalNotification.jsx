@@ -1,6 +1,6 @@
 import "./globalNotification.css";
 
-function GlobalNotification({status}) {
+export default function GlobalNotification({status}) {
   return (
     <div className={`global-notification ${!status ? "inactive" : ""}`}>
       <div className="container">
@@ -13,5 +13,3 @@ function GlobalNotification({status}) {
     </div>
   );
 }
-
-export default GlobalNotification;
