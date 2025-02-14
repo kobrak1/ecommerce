@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartProvider";
+import GlobalNotification from "../GlobalNotification/GlobalNotification";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Header.css";
 
@@ -11,15 +12,7 @@ function Header({ setIsSearchShow }) {
   const user = localStorage.getItem("user");
   return (
     <header>
-      <div className="global-notification">
-        <div className="container">
-          <p>
-            SUMMER SALE FOR ALL SWIM SUITS AND FREE EXPRESS INTERNATIONAL
-            DELIVERY - OFF 50%!
-            <a href="shop.html">SHOP NOW</a>
-          </p>
-        </div>
-      </div>
+      <GlobalNotification status={true} /> {/* Will be added a function to handle the state of Global Notification*/}
       <div className="header-row">
         <div className="container">
           <div className="header-wrapper">
