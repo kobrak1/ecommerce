@@ -1,15 +1,13 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/CartProvider";
 import GlobalNotification from "../GlobalNotification/GlobalNotification";
+import HeaderRight from "./HeaderRight/HeaderRight";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Header.css";
 
 // eslint-disable-next-line react/prop-types
 function Header({ setIsSearchShow }) {
-  const { cartItems } = useContext(CartContext);
   const { pathname } = useLocation();
   // console.log(window.location);
-  const user = localStorage.getItem("user");
+  
   return (
     <header>
       <GlobalNotification status={true} /> {/* Will be added a function to handle the state of Global Notification*/}
@@ -204,49 +202,7 @@ function Header({ setIsSearchShow }) {
               </nav>
               <i className="bi-x-circle" id="close-sidebar"></i>
             </div>
-            <div className="header-right">
-              <div className="header-right-links">
-                <NavLink
-                  to={"/auth"}
-                  className="header-account"
-                  title="Profile"
-                >
-                  <i className="bi bi-person"></i>
-                </NavLink>
-                <button
-                  className="search-button"
-                  onClick={() => setIsSearchShow(true)}
-                >
-                  <i className="bi bi-search"></i>
-                </button>
-                <NavLink to={"/admin"}>
-                  <i className="bi bi-heart"></i>
-                </NavLink>
-                <div className="header-cart">
-                  <NavLink to={"/cart"} className="header-cart-link">
-                    <i className="bi bi-bag"></i>
-                    <span className="header-cart-count">
-                      {" "}
-                      {cartItems.length}{" "}
-                    </span>
-                  </NavLink>
-                </div>
-                {user && (
-                  <button
-                    className="logout-button"
-                    title="Logout"
-                    onClick={() => {
-                      if (window.confirm("Are you sure you want to logout?")) {
-                        localStorage.removeItem("user");
-                        window.location.href = "/";
-                      }
-                    }}
-                  >
-                    <i className="bi bi-box-arrow-right"></i>
-                  </button>
-                )}
-              </div>
-            </div>
+            <HeaderRight />
           </div>
         </div>
       </div>
